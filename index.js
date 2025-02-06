@@ -1,3 +1,8 @@
+let score = 0;
+function updateScore(points) {
+    score += points;
+    document.getElementById("score").textContent = "Score: " + score;
+}
 for (M = N = [i = 113]; --i; M[i - 1] = i % 8 < 2 | i < 8) {
     function Y() {
         e++;
@@ -14,7 +19,10 @@ for (M = N = [i = 113]; --i; M[i - 1] = i % 8 < 2 | i < 8) {
                 n = c = 0;
                 for (E = [i]; g & M[i] > 1 & n >= c >> 2; t > 102 | C[t] | M[i] - M[t] || (E[++n] = C[t] = t))
                     t = p, p = -l, l = t, t += E[c++ >> 2];
-                for (; c > 16 && n;) g = M[E[n--]] = 0;
+                for (; c > 16 && n;){
+                    g = M[E[n--]] = 0;
+                    updateScore(10);                
+                }
             }
             B = g ? Math.random(h = 100, l = 8, p = -1) * 16 + 8 : --e;
         }
