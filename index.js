@@ -3,13 +3,17 @@ function startGame(){
     document.getElementById("game-screen").style.display = "block";
     Y(g = h = e = 9, l = p = K = 0);
 }
+let fallDelay = 50; // 初期落下速度（ミリ秒）
+let tickCount = 0;
 let score = 0;
 function updateScore(points) {
     score += points;
     document.getElementById("score").textContent = "Score: " + score;
 }
+
 for (M = N = [i = 113]; --i; M[i - 1] = i % 8 < 2 | i < 8) {
     function Y() {
+        tickCount++; // ループ毎にカウント
         e++;
         if (e %= 10)
             for (N = [K - 2 ? K - 50 ? h -= M[h + l - K] | M[h - K] ? 0 : K : M[h + p] ||
@@ -31,13 +35,17 @@ for (M = N = [i = 113]; --i; M[i - 1] = i % 8 < 2 | i < 8) {
             }
             B = g ? Math.random(h = 100, l = 8, p = -1) * 16 + 8 : --e;
         }
-
+        // 描画処理
         for (i = 104, S = ""; i--; S += n-- ? n ? `<a class='puyo' style='background:#${248 * n}; color:#fff;'>●</a>` : i % 8 ? "■" : "■<br>" : "＿")
             n = N[i];
         D.innerHTML = S;
         document.body.style.backgroundColor = "#191950";    //背景色の変更
 
+        // 落下速度を上げるため、一定回数ごとにタイマー遅延を短くする
+        if(tickCount % 100 === 0 && fallDelay > 10){
+            fallDelay--;
+        }
 
-        M[100] * g || setTimeout(Y, 50);
+        M[100] * g || setTimeout(Y, fallDelay);
     }
 }
