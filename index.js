@@ -35,6 +35,8 @@ for (M = N = [i = 113]; --i; M[i - 1] = i % 8 < 2 | i < 8) {
         for (i = 104, S = ""; i--; S += n-- ? n ? `<a class='puyo' style='background:#${248 * n}; color:#fff;'>●</a>` : i % 8 ? "■" : "■<br>" : "＿")
             n = N[i];
         D.innerHTML = S;
+        document.body.style.backgroundColor = "#191950";    //背景色の変更
+
 
         M[100] * g || setTimeout(Y, 50);
     }
