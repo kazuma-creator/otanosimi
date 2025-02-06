@@ -4,6 +4,16 @@ body {
   text-align: center;
   font-family: Arial, sans-serif;
 }
+#title-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#game-screen {
+  display: none;
+}
 #D {
   display: inline-block;
   font-size: 24px;

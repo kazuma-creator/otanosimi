@@ -1,3 +1,8 @@
+function startGame(){
+    document.getElementById("title-screen").style.display = "none";
+    document.getElementById("game-screen").style.display = "block";
+    Y(g = h = e = 9, l = p = K = 0);
+}
 let score = 0;
 function updateScore(points) {
     score += points;
@@ -34,4 +39,3 @@ for (M = N = [i = 113]; --i; M[i - 1] = i % 8 < 2 | i < 8) {
         M[100] * g || setTimeout(Y, 50);
     }
 }
-Y(g = h = e = 9, l = p = K = 0);
