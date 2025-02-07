@@ -57,7 +57,7 @@ function startGame(){
   // リトライ処理：リトライボタンが押されたときに呼ばれる
   function retryGame() {
     // ゲーム画面の初期化など必要なリセット処理を行い、ゲームを再スタート
-    startGame();
+    location.reload();
   }
   
   // （元のコードの初期化処理）
